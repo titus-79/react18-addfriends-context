@@ -1,10 +1,14 @@
 import PropTypes from "prop-types";
+import { createContext, useContext } from "react";
+import FriendContext from "../context/FriendContext";
 
 function User(props) {
   const { username, name, email } = props;
 
   // TODO replace with context
-  const { friends, setFriends } = props;
+  // const { friends, setFriends } = props;
+  // je récupère le context dans le composant
+  const {friends} = useContext(FriendContext);
 
   function addFriend() {
     if (friends.includes(username)) {
@@ -31,8 +35,9 @@ User.propTypes = {
   username: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
-  friends: PropTypes.array.isRequired,
-  setFriends: PropTypes.func.isRequired,
+  // je n'ai plus besoin de ces props
+  // friends: PropTypes.array.isRequired,
+  // setFriends: PropTypes.func.isRequired,
 };
 
 export default User;

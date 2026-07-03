@@ -1,8 +1,12 @@
 import PropTypes from "prop-types";
+import { useContext } from "react";
+import FriendContext from "../context/FriendContext";
 
 function FriendList(props) {
   // TODO replace with context
-  const { friends } = props;
+  // const { friends } = props;
+  // je récupère le context avec useContext
+  const {friends} = useContext(FriendContext);
 
   return (
     <div className="FriendList">
