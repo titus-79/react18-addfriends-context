@@ -8,7 +8,7 @@ function User(props) {
   // TODO replace with context
   // const { friends, setFriends } = props;
   // je récupère le context dans le composant
-  const {friends} = useContext(FriendContext);
+  const {friends, setFriends} = useContext(FriendContext);
 
   function addFriend() {
     if (friends.includes(username)) {
